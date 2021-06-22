@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components';
-import { Home } from './pages/Home';
+// import { Home } from './pages/Home';
+import { NewRoom } from './pages/NewRoom';
 import { GlobalStyle } from './styles/global';
 
 // import dracula from './styles/themes/dracula';
@@ -10,7 +11,7 @@ function App() {
     <>
       <ThemeProvider theme={nlw}>
         <GlobalStyle />
-        <Home />
+        <NewRoom />
       </ThemeProvider>
     </>
   );

@@ -58,6 +58,12 @@ export const PageAuth = styled.div`
       align-self: center;
     }
 
+    h2 {
+      font-size: 1.5rem;
+      margin: 4rem 0 1.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
     form {
       input {
         height: 3.12rem;
@@ -66,14 +72,14 @@ export const PageAuth = styled.div`
 
         background: ${(props) => props.theme.colors.white};
         border: 1px solid ${(props) => props.theme.colors.gray};
-        box-shadow: 0 5px ${(props) => props.theme.colors.gray};
+        box-shadow: 0 4.5px ${(props) => props.theme.colors.gray};
         outline: none;
 
         transition: all 0.3s;
 
         &:active, &:focus{
           border: 1px solid ${(props) => props.theme.colors.purpleDark};
-          box-shadow: 0 5px ${(props) => props.theme.colors.purpleDark};
+          box-shadow: 0 4.5px ${(props) => props.theme.colors.purpleDark};
 
           ::placeholder {
             color: ${(props) => props.theme.colors.purpleDark};
@@ -87,6 +93,16 @@ export const PageAuth = styled.div`
 
       button, input {
         width: 100%;
+      }
+    }
+
+    p {
+      font-size: 0.87rem;
+      color: ${(props) => props.theme.colors.gray};
+      margin-top: 1rem;
+
+      a {
+        color: ${(props) => props.theme.colors.pink};
       }
     }
   }

@@ -1,0 +1,26 @@
+export default {
+  title: 'nlw',
+
+  colors: {
+    primary: '#F8F8F8',
+    secondary: '#835AFD',
+    text: '#29292e',
+    textHighlight: '#E559F9',
+    comment: '#A8A8B3',
+    white: '#f8f8f8',
+    gray: '#A8A8B3',
+    red: '#EA4335',
+    redDark: '#cb392e',
+    redShadow: '#b8332a',
+    green: '#000',
+    greenDark: '#000',
+    greenShadow: '#000',
+    pink: '#ee4ef9',
+    pinkDark: '#E559F9',
+    pinkShadow: '#bc4ace',
+    purple: '#835AFD',
+    purpleDark: '#6b4acf',
+    purpleShadow: '#553ba5',
+    cyan: '#8be9fd',
+  },
+};

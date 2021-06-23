@@ -9,7 +9,7 @@ import { PageAuth } from '../styles/auth';
 import { Button } from '../components/Button';
 
 export function Home() {
-  const HISTORY = useHistory();
+  const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
 
   async function handleCreateRoom() {
@@ -18,7 +18,7 @@ export function Home() {
       await signInWithGoogle();
     }
 
-    HISTORY.push('/rooms/new');
+    history.push('/rooms/new');
   }
 
   return (

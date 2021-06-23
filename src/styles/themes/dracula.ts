@@ -9,6 +9,7 @@ export default {
     comment: '#6272a4',
     white: '#f8f8f2',
     gray: '#7E85A7',
+    grayDark: '#6f7695',
     red: '#ff5555',
     redDark: '#e64c4c',
     redShadow: '#b33a3a',

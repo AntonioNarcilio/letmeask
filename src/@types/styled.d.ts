@@ -12,6 +12,7 @@ declare module 'styled-components' {
       textHighlight: string;
       white: string;
       gray: string;
+      grayDark: string;
       red: string;
       redDark: string;
       redShadow: string;

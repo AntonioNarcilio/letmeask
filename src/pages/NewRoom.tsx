@@ -1,10 +1,15 @@
+import { Link } from 'react-router-dom';
+// import { useContext } from 'react';
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 
 import { PageAuth } from '../styles/auth';
 import { Button } from '../components/Button';
+// import { AuthContext } from '../contexts/AuthContext';
 
 export function NewRoom() {
+  // const { user } = useContext(AuthContext);
+
   return (
     <PageAuth>
       <aside>
@@ -28,8 +33,7 @@ export function NewRoom() {
             <p>
               Quer entrar em uma sala existente?
               {' '}
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#">Clique aqui</a>
+              <Link to="/">Clique aqui</Link>
             </p>
           </form>
         </div>

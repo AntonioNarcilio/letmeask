@@ -73,16 +73,19 @@ export const PageAuth = styled.div`
         background: ${(props) => props.theme.colors.white};
         border: 1px solid ${(props) => props.theme.colors.gray};
         box-shadow: 0 4.5px ${(props) => props.theme.colors.gray};
+        color: ${(props) => props.theme.colors.grayDark};
+
         outline: none;
 
         transition: all 0.3s;
 
         &:active, &:focus{
-          border: 1px solid ${(props) => props.theme.colors.purpleDark};
-          box-shadow: 0 4.5px ${(props) => props.theme.colors.purpleDark};
+          background: ${(props) => props.theme.colors.gray};
+          box-shadow: 0 4.5px ${(props) => props.theme.colors.grayDark};
+          color: ${(props) => props.theme.colors.white};
 
           ::placeholder {
-            color: ${(props) => props.theme.colors.purpleDark};
+            color: ${(props) => props.theme.colors.white};
           }
         }
       }

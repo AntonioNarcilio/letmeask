@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const RoomCodeButton = styled.div`
+  display: flex;
   height: 2.5rem;
   border-radius: 8px;
   overflow: hidden;
@@ -9,7 +10,7 @@ export const RoomCodeButton = styled.div`
   border: 1px solid ${(props) => props.theme.colors.purple};
   cursor: pointer;
 
-  display: flex;
+  transition: background-color 0.3s;
 
   div {
     background: ${(props) => props.theme.colors.purple};
@@ -17,6 +18,17 @@ export const RoomCodeButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: background-color 0.3s;
+  }
+
+  &:hover {
+    background: ${(props) => props.theme.colors.white};
+    border: 1px solid ${(props) => props.theme.colors.pink};
+
+    div {
+      background: ${(props) => props.theme.colors.pink};
+    }
   }
 
   span {

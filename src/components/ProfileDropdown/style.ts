@@ -4,16 +4,13 @@ export const Dropdown = styled.div`
   position: relative;
   display: inline-block;
 
-  width: 2.2rem;
-  height: 2.2rem;
-  margin-left: 2rem;
-
-  border-radius: 50%;
-  border: 2px solid ${(props) => props.theme.colors.purple};
+  /* width: 2.4rem;
+  height: 2.4rem; */
+  margin-left: 1.5rem;
 
   .drop-button {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
 
     display: flex;
     align-items: center;
@@ -23,9 +20,11 @@ export const Dropdown = styled.div`
     border: none;
     cursor: pointer;
 
-    /* &:hover, &:focus {
-      background-color: #2980B9;
-    } */
+    border: 2px solid ${(props) => props.theme.colors.purple};
+    border-radius: 50%;
+
+    transition: all 0.3s;
+
     div {
       position: absolute;
       z-index: -1;
@@ -41,6 +40,15 @@ export const Dropdown = styled.div`
       svg circle, svg path {
         fill: ${(props) => props.theme.colors.purple};
         stroke: ${(props) => props.theme.colors.purple};
+      }
+    }
+
+    &:hover {
+      border: 2px solid ${(props) => props.theme.colors.pink};
+
+      svg circle, svg path {
+        fill: ${(props) => props.theme.colors.pink};
+        stroke: ${(props) => props.theme.colors.pink};
       }
     }
   }

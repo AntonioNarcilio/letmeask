@@ -54,6 +54,7 @@ export function ProfileDropDown() {
           type="button"
           className="drop-button"
           onClick={showDropdownContent}
+          title="Profile"
         >
           <div>
             <ProfileImg />

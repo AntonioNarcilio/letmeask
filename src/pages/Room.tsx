@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FormEvent, useEffect, useState } from 'react';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 import { useHistory, useParams } from 'react-router-dom';
@@ -7,6 +8,7 @@ import { QuestionType, RoomParamsType } from '../@types/room.d';
 import logoImg from '../assets/images/logo.svg';
 
 import { Button } from '../components/Button';
+import { ProfileDropDown } from '../components/ProfileDropdown';
 import { RoomCode } from '../components/RoomCode';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
@@ -14,7 +16,8 @@ import { PageRoom } from '../styles/room';
 
 export function Room() {
   const history = useHistory();
-  const { user, signInWithGoogle, signOut } = useAuth();
+
+  const { user, signInWithGoogle } = useAuth();
   const params = useParams<RoomParamsType>();
   const [newQuestion, setNewQuestion] = useState('');
   const [questions, setQuestions] = useState<QuestionType[]>([]);
@@ -31,15 +34,6 @@ export function Room() {
     }
 
     history.push(`${roomId}`);
-  }
-
-  function signOutAccount() {
-    // user is not authenticate?
-    if (user) {
-      signOut();
-    }
-
-    history.replace('/');
   }
 
   useEffect(() => {
@@ -95,11 +89,10 @@ export function Room() {
         <header>
           <div className="content">
             <img src={logoImg} alt="letmeask" />
+
             <RoomCode code={roomId} />
+            <ProfileDropDown />
           </div>
-
-          <button type="button" onClick={signOutAccount}>sair</button>
-
         </header>
 
         <main className="content">

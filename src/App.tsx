@@ -10,6 +10,7 @@ import { GlobalStyle } from './styles/global';
 
 // import dracula from './styles/themes/dracula';
 import nlw from './styles/themes/nlw';
+import { Contact } from './pages/Contact';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/rooms/new" component={NewRoom} />
             <Route path="/rooms/:id" component={Room} />
+            <Route path="/info" component={Contact} />
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>

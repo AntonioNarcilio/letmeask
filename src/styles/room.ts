@@ -11,8 +11,12 @@ export const PageRoom = styled.div`
     .content {
       max-width: 1128px;
       margin: 0 auto;
-      display: flex;
+      /* display: flex;
       justify-content: space-between;
+      align-items: center; */
+
+      display: grid;
+      grid-template-columns: calc(100vw/1.66) 1fr 0.3fr;
       align-items: center;
 
       > img {
@@ -39,11 +43,12 @@ export const PageRoom = styled.div`
       span {
         margin-left: 1rem;
         background: ${(props) => props.theme.colors.pink};
-        border-radius: 9999px;
+        border-radius: 8px;
         padding: 0.5rem 1rem;
         color: ${(props) => props.theme.colors.white};
         font-weight: 500;
-        font-family: 0.87rem;
+        font-size: 0.87rem;
+        /* text-decoration: underline; */
       }
     }
 

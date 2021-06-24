@@ -54,13 +54,16 @@ export function AuthContextProvider(props:AuthContextProviderType) {
         });
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.log('ERROR: ', error);
     }
   }
 
+  async function signOut() {
+    await auth.signOut();
+  }
+
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, signInWithGoogle, signOut }}>
       {/* eslint-disable-next-line react/destructuring-assignment */}
       {props.children}
     </AuthContext.Provider>

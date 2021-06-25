@@ -4,13 +4,9 @@ export const Dropdown = styled.div`
   position: relative;
   display: inline-block;
 
-  /* width: 2.4rem;
-  height: 2.4rem; */
-  margin-left: 1.5rem;
-
   .drop-button {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
 
     display: flex;
     align-items: center;
@@ -68,8 +64,8 @@ export const Dropdown = styled.div`
     border-radius: 8px;
 
     top: 0;
-    left: 50%;
-    transform: translate(-50%, calc(100vh/15));
+    left: 0%;
+    transform: translate(-37%, calc(100vh/15));
 
     a {
       width: 100%;
@@ -106,6 +102,16 @@ export const Dropdown = styled.div`
 
       &:hover {
         background-color: ${(props) => props.theme.colors.secondary};
+        color: ${(props) => props.theme.colors.white};
+      }
+    }
+
+    .outlined {
+      color: ${(props) => props.theme.colors.red};
+      transition: all 0.3s;
+
+      &:hover {
+        background: ${(props) => props.theme.colors.red};
         color: ${(props) => props.theme.colors.white};
       }
     }

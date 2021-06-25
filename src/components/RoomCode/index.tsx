@@ -1,4 +1,5 @@
-import toast, { ToastBar, Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
+import { CustomToastSuccess } from '../CustomToast';
 
 import { RoomCodeProps } from '../../@types/room-code.d';
 import copyImg from '../../assets/images/copy.svg';
@@ -28,26 +29,7 @@ export function RoomCode(props: RoomCodeProps) {
         </span>
       </RoomCodeButton>
 
-      <Toaster
-        toastOptions={{
-          success: {
-            style: {
-              background: 'white',
-              color: 'black',
-            },
-          },
-        }}
-      >
-        {(t) => (
-          <ToastBar
-            toast={t}
-            style={{
-              ...t.style,
-              animation: t.visible ? 'custom-enter 1s ease' : 'custom-exit 1s ease',
-            }}
-          />
-        )}
-      </Toaster>
+      <CustomToastSuccess />
     </>
   );
 }

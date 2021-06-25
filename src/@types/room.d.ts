@@ -11,6 +11,8 @@ type QuestionType = {
   content: string;
   isAnswered: boolean;
   isHighlighted: boolean;
+  likeCount: number;
+  likeId: string | undefined;
 }
 
 export { RoomParamsType, QuestionType };

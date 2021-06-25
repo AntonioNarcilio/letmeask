@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
+import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
-import toast, { ToastBar, Toaster } from 'react-hot-toast';
+import { CustomToastSuccess } from '../CustomToast';
 import { useAuth } from '../../hooks/useAuth';
 
 import { ReactComponent as ProfileImg } from '../../assets/images/profile.svg';
@@ -55,6 +56,7 @@ export function ProfileDropDown() {
           className="drop-button"
           onClick={showDropdownContent}
           title="Profile"
+          aria-label="Profile"
         >
           <div>
             <ProfileImg />
@@ -66,32 +68,17 @@ export function ProfileDropDown() {
 
           <a href="/info">Info</a>
 
+          <button type="button" className="outlined">Close room</button>
+
           { user && (
-          <button type="button" onClick={signOutAccount}>Logoff</button>
+          <button type="button" onClick={signOutAccount}>Logoff account</button>
           )}
         </div>
 
       </Dropdown>
-      <Toaster
-        toastOptions={{
-          success: {
-            style: {
-              background: 'white',
-              color: 'black',
-            },
-          },
-        }}
-      >
-        {(t) => (
-          <ToastBar
-            toast={t}
-            style={{
-              ...t.style,
-              animation: t.visible ? 'custom-enter 1s ease' : 'custom-exit 1s ease',
-            }}
-          />
-        )}
-      </Toaster>
+
+      <CustomToastSuccess />
+
     </>
   );
 }

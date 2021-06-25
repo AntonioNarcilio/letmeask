@@ -6,6 +6,9 @@ type FirebaseQuestionsType = Record<string, {
   content: string;
   isAnswered: boolean;
   isHighlighted: boolean;
+  likes: Record<string, {
+    authorId: string;
+  }>
 }>
 
 export { FirebaseQuestionsType };

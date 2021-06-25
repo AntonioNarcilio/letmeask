@@ -1,0 +1,66 @@
+import styled from 'styled-components';
+
+export const QuestionContent = styled.div`
+  background: ${(props) => props.theme.colors.white};
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+
+  margin-top: 0.5rem;
+
+  p {
+    color: ${(props) => props.theme.colors.text};
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 0.5rem;
+        color: ${(props) => props.theme.colors.text};
+        font-weight: 500;
+        font-size: 0.87rem;
+      }
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: ${(props) => props.theme.colors.comment};
+        gap: 0.5rem;
+
+        transition: filter 0.2s;
+
+        &.liked {
+          color: ${(props) => props.theme.colors.purple};
+
+          svg path {
+            stroke: ${(props) => props.theme.colors.purple};
+          }
+        }
+
+        &:hover {
+          filter: brightness(0.5);
+        }
+      }
+    }
+  }
+`;

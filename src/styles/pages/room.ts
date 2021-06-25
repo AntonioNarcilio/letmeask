@@ -2,29 +2,6 @@ import styled from 'styled-components';
 
 export const PageRoom = styled.div`
 
-  header {
-    padding: 1.5rem;
-    border-width: 2px;
-    border-style: solid;
-    border-image: linear-gradient(to right, rgb(242, 89, 249), rgb(131, 90, 253)) 0 1 100%;
-
-    .content {
-      max-width: 1128px;
-      margin: 0 auto;
-      /* display: flex;
-      justify-content: space-between;
-      align-items: center; */
-
-      display: grid;
-      grid-template-columns: calc(100vw/1.66) 1fr 0.3fr;
-      align-items: center;
-
-      > img {
-        max-height: 2.81rem;
-      }
-    }
-  }
-
   main {
     max-width: 800px;
     margin: 0 auto;
@@ -48,7 +25,6 @@ export const PageRoom = styled.div`
         color: ${(props) => props.theme.colors.white};
         font-weight: 500;
         font-size: 0.87rem;
-        /* text-decoration: underline; */
       }
     }
 
@@ -104,6 +80,15 @@ export const PageRoom = styled.div`
         }
       }
     }
+
+    .question-list {
+      margin-top: 1.5rem;
+    }
+  }
+
+  footer {
+    width: 100%;
+    min-height: 10vh;
   }
 
 `;

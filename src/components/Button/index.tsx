@@ -1,11 +1,12 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonProps } from '../../@types/button.d';
 import { MyButton } from './style';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
-
-export function Button(props: ButtonProps) {
+export function Button({ isOutline = false, ...props }: ButtonProps) {
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <MyButton {...props} />
+    <MyButton
+      className={`${isOutline} ? 'outlined'`}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
+    />
   );
 }

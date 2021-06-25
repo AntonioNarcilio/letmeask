@@ -5,17 +5,19 @@ import toast from 'react-hot-toast';
 import { CustomToastError } from '../components/CustomToast';
 import { RoomParamsType } from '../@types/room.d';
 
-import { ReactComponent as LikeImg } from '../assets/images/like.svg';
+import logoImg from '../assets/images/logo.svg';
 
 import { Button } from '../components/Button';
+import { ProfileDropDown } from '../components/ProfileDropdown';
 import { Question } from '../components/Question';
+import { RoomCode } from '../components/RoomCode';
 import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 import { PageRoom } from '../styles/pages/room';
 import { Header } from '../components/Header';
 
-export function Room() {
+export function AdminRoom() {
   const history = useHistory();
 
   const { user, signInWithGoogle } = useAuth();
@@ -63,16 +65,6 @@ export function Room() {
     setNewQuestion('');
   }
 
-  async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
-    if (likeId) {
-      await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove();
-    } else {
-      await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
-        authorId: user?.id,
-      });
-    }
-  }
-
   return (
     <>
       <PageRoom>
@@ -95,48 +87,13 @@ export function Room() {
 
           </div>
 
-          <form onSubmit={handleSendQuestion}>
-            <textarea
-              placeholder="O que você quer perguntar?"
-              onChange={(event) => setNewQuestion(event.target.value)}
-              value={newQuestion}
-            />
-
-            <div className="form-footer">
-              { user
-                ? (
-                  <div className="user-info">
-                    <img src={user.avatar} alt={user.name} />
-                    <span>{user.name}</span>
-                  </div>
-                ) : (
-                  <span>
-                    Para enviar uma pergunta,
-                    {' '}
-                    <button type="button" onClick={handleSignInGoogle}>faça seu login.</button>
-                  </span>
-                )}
-              <Button type="submit" disabled={!user}>Enviar pergunta</Button>
-            </div>
-          </form>
-
           <div className="question-list">
             {questions.map((question) => (
               <Question
                 key={question.id}
                 content={question.content}
                 author={question.author}
-              >
-                <button
-                  className={`like-button ${question.likeId ? 'liked' : ''}`}
-                  type="button"
-                  aria-label="Marcar como gostei"
-                  onClick={() => handleLikeQuestion(question.id, question.likeId)}
-                >
-                  { question.likeCount > 0 && <span>{question.likeCount}</span>}
-                  <LikeImg />
-                </button>
-              </Question>
+              />
             ))}
           </div>
 

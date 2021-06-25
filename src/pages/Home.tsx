@@ -1,6 +1,7 @@
+import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 import { FormEvent, useState } from 'react';
-import toast, { ToastBar, Toaster } from 'react-hot-toast';
+import { CustomToastError } from '../components/CustomToast';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
 
@@ -9,7 +10,7 @@ import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 import { Button } from '../components/Button';
-import { PageAuth } from '../styles/auth';
+import { PageAuth } from '../styles/pages/auth';
 
 export function Home() {
   const history = useHistory();
@@ -78,26 +79,7 @@ export function Home() {
         </main>
       </PageAuth>
 
-      <Toaster
-        toastOptions={{
-          error: {
-            style: {
-              background: 'white',
-              color: 'black',
-            },
-          },
-        }}
-      >
-        {(t) => (
-          <ToastBar
-            toast={t}
-            style={{
-              ...t.style,
-              animation: t.visible ? 'custom-enter 1s ease' : 'custom-exit 1s ease',
-            }}
-          />
-        )}
-      </Toaster>
+      <CustomToastError />
     </>
   );
 }

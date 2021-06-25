@@ -1,17 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { FormEvent, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import toast from 'react-hot-toast';
-import { CustomToastError } from '../components/CustomToast';
+// import { CustomHotToast } from '../components/CustomToast';
 import { RoomParamsType } from '../@types/room.d';
 
-import logoImg from '../assets/images/logo.svg';
+import deleteImg from '../assets/images/delete.svg';
 
-import { Button } from '../components/Button';
-import { ProfileDropDown } from '../components/ProfileDropdown';
 import { Question } from '../components/Question';
-import { RoomCode } from '../components/RoomCode';
-import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 import { PageRoom } from '../styles/pages/room';
@@ -19,56 +13,31 @@ import { Header } from '../components/Header';
 
 export function AdminRoom() {
   const history = useHistory();
-
-  const { user, signInWithGoogle } = useAuth();
   const params = useParams<RoomParamsType>();
-  const [newQuestion, setNewQuestion] = useState('');
 
   const roomId = params.id;
   const { title, questions } = useRoom(roomId);
 
-  const notifyError = () => toast.error('You must be logged in');
-
-  async function handleSignInGoogle() {
-    // user is not authenticate?
-    if (!user) {
-      await signInWithGoogle();
+  async function handleDeleteQuestion(questionId: string) {
+    // eslint-disable-next-line no-alert
+    if (window.confirm('Tem certeza que  você deseja excluir esta pergunta?')) {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
-
-    history.push(`${roomId}`);
   }
 
-  async function handleSendQuestion(event: FormEvent) {
-    event.preventDefault();
+  async function handleEndRoom() {
+    await database.ref(`rooms/${roomId}`).update({
+      endedAt: new Date(),
+    });
 
-    // textarea is empty?
-    if (newQuestion.trim() === '') {
-      return;
-    }
-
-    if (!user) {
-      notifyError();
-    }
-
-    const question = {
-      content: newQuestion,
-      author: {
-        name: user?.name,
-        avatar: user?.avatar,
-      },
-
-      isHighlighted: false,
-      isAnswered: false,
-    };
-
-    await database.ref(`rooms/${roomId}/questions`).push(question);
-    setNewQuestion('');
+    history.replace('/');
   }
 
   return (
     <>
       <PageRoom>
-        <Header roomId={roomId} />
+
+        <Header roomId={roomId} closeRoom={handleEndRoom} />
 
         <main className="content">
           <div className="room-title">
@@ -93,7 +62,14 @@ export function AdminRoom() {
                 key={question.id}
                 content={question.content}
                 author={question.author}
-              />
+              >
+                <button
+                  type="button"
+                  onClick={() => handleDeleteQuestion(question.id)}
+                >
+                  <img src={deleteImg} alt="Remover pergunta" />
+                </button>
+              </Question>
             ))}
           </div>
 
@@ -104,7 +80,7 @@ export function AdminRoom() {
         </footer>
       </PageRoom>
 
-      <CustomToastError />
+      {/* <CustomHotToast  /> */}
     </>
   );
 }

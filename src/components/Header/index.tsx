@@ -1,15 +1,15 @@
+import { HeaderProps } from '../../@types/header.d';
+
 import logoImg from '../../assets/images/logo.svg';
-import { ProfileDropDown } from '../ProfileDropdown';
+
+import { ProfileDropdown } from '../ProfileDropdown';
 import { RoomCode } from '../RoomCode';
 import { MyHeader } from './style';
 
-type HeaderProps = {
-  // eslint-disable-next-line react/require-default-props
-  roomId?: string;
-}
-
 export function Header(props: HeaderProps) {
   const { roomId } = props;
+  const { closeRoom } = props;
+
   return (
     <MyHeader>
       <div className="content">
@@ -17,8 +17,8 @@ export function Header(props: HeaderProps) {
         <div>
           {roomId
           && <RoomCode code={roomId} />}
+          {closeRoom ? <ProfileDropdown adminCloseRoom={closeRoom} /> : <ProfileDropdown />}
 
-          <ProfileDropDown />
         </div>
       </div>
     </MyHeader>

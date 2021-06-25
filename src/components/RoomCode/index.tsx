@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast';
-import { CustomToastSuccess } from '../CustomToast';
+import { CustomHotToast } from '../CustomToast';
 
 import { RoomCodeProps } from '../../@types/room-code.d';
 import copyImg from '../../assets/images/copy.svg';
@@ -7,7 +7,9 @@ import copyImg from '../../assets/images/copy.svg';
 import { RoomCodeButton } from './styles';
 
 export function RoomCode(props: RoomCodeProps) {
-  const notifySuccess = () => toast.success('code copied to clipboard');
+  const notifySuccess = () => toast.success('Código copiado', {
+    id: 'clipboard',
+  });
 
   function copyRoomCodeToClipboard() {
     // eslint-disable-next-line react/prop-types
@@ -29,7 +31,7 @@ export function RoomCode(props: RoomCodeProps) {
         </span>
       </RoomCodeButton>
 
-      <CustomToastSuccess />
+      <CustomHotToast />
     </>
   );
 }

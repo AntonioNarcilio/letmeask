@@ -1,7 +1,7 @@
 import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 import { FormEvent, useState } from 'react';
-import { CustomToastError } from '../components/CustomToast';
+import { CustomHotToast } from '../components/CustomToast';
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
 
@@ -16,8 +16,6 @@ export function Home() {
   const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
   const [roomCode, setRoomCode] = useState('');
-
-  const notifyError = () => toast.error('Room does not exists');
 
   async function handleCreateRoom() {
     // user is not authenticate?
@@ -37,9 +35,14 @@ export function Home() {
     }
 
     const roomRef = database.ref(`rooms/${roomCode}`).get();
-
+    // room not exist ?
     if (!(await roomRef).exists()) {
-      notifyError();
+      toast.error('Sala não existe!');
+      return;
+    }
+    // room is close ?
+    if ((await roomRef).val().endedAt) {
+      toast.error('Sala fechada pelo admin');
       return;
     }
 
@@ -79,7 +82,7 @@ export function Home() {
         </main>
       </PageAuth>
 
-      <CustomToastError />
+      <CustomHotToast />
     </>
   );
 }

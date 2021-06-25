@@ -2,7 +2,7 @@
 import { FormEvent, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { CustomToastError } from '../components/CustomToast';
+import { CustomHotToast } from '../components/CustomToast';
 import { RoomParamsType } from '../@types/room.d';
 
 import { ReactComponent as LikeImg } from '../assets/images/like.svg';
@@ -25,7 +25,7 @@ export function Room() {
   const roomId = params.id;
   const { title, questions } = useRoom(roomId);
 
-  const notifyError = () => toast.error('You must be logged in');
+  const notifyError = () => toast.error('Você deve estar logado');
 
   async function handleSignInGoogle() {
     // user is not authenticate?
@@ -147,7 +147,7 @@ export function Room() {
         </footer>
       </PageRoom>
 
-      <CustomToastError />
+      <CustomHotToast />
     </>
   );
 }

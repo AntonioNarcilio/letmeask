@@ -2,15 +2,18 @@
 /* eslint-disable no-unused-vars */
 import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
-import { CustomToastSuccess } from '../CustomToast';
+import { CustomHotToast } from '../CustomToast';
 import { useAuth } from '../../hooks/useAuth';
 
 import { ReactComponent as ProfileImg } from '../../assets/images/profile.svg';
 import { Dropdown } from './style';
+import { ProfileDropdownType } from '../../@types/profile-dropdown.d';
 
-export function ProfileDropDown() {
+export function ProfileDropdown(props: ProfileDropdownType) {
   const { user, signOut } = useAuth();
   const history = useHistory();
+
+  const { adminCloseRoom } = props;
 
   function signOutAccount() {
     // user is not authenticate?
@@ -20,7 +23,7 @@ export function ProfileDropDown() {
     history.replace('/');
   }
 
-  const notifySuccess = () => toast.success('Theme has been changed');
+  const notifySuccess = () => toast.success('O tema foi alterado!');
 
   function changeTheme() {
     notifySuccess();
@@ -28,7 +31,7 @@ export function ProfileDropDown() {
 
   function showDropdownContent() {
     // @ts-ignore
-    document.getElementById('myDropdown').classList.toggle('show');
+    document.getElementById('my-dropdown').classList.toggle('show');
   }
 
   // Close the dropdown if the user clicks outside of it
@@ -63,12 +66,12 @@ export function ProfileDropDown() {
           </div>
         </button>
 
-        <div id="myDropdown" className="dropdown-content">
+        <div id="my-dropdown" className="dropdown-content">
           <button type="button" onClick={changeTheme}>Theme</button>
 
           <a href="/info">Info</a>
 
-          <button type="button" className="outlined">Close room</button>
+          { adminCloseRoom && <button type="button" onClick={adminCloseRoom} className="outlined">Close room</button>}
 
           { user && (
           <button type="button" onClick={signOutAccount}>Logoff account</button>
@@ -77,7 +80,7 @@ export function ProfileDropDown() {
 
       </Dropdown>
 
-      <CustomToastSuccess />
+      <CustomHotToast />
 
     </>
   );

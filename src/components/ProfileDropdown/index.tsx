@@ -5,28 +5,35 @@ import { useHistory } from 'react-router-dom';
 import { CustomHotToast } from '../CustomToast';
 import { useAuth } from '../../hooks/useAuth';
 
-import { ReactComponent as ProfileImg } from '../../assets/images/profile.svg';
+import { ReactComponent as ProfileSvg } from '../../assets/images/profile.svg';
 import { Dropdown } from './style';
 import { ProfileDropdownType } from '../../@types/profile-dropdown.d';
 
 export function ProfileDropdown(props: ProfileDropdownType) {
-  const { user, signOut } = useAuth();
   const history = useHistory();
+  const { user, signOut, signInWithGoogle } = useAuth();
 
-  const { adminCloseRoom } = props;
+  const { adminCloseRoom, roomId } = props;
 
-  function signOutAccount() {
+  function changeTheme() {
+    toast.success('O tema foi alterado!');
+  }
+
+  async function handleSignInGoogle(pageId: string|undefined) {
+    // user is not authenticate?
+    if (!user) {
+      await signInWithGoogle();
+    }
+
+    history.push(`${pageId}`);
+  }
+
+  function handleSignOutAccount() {
     // user is not authenticate?
     if (user) {
       signOut();
     }
     history.replace('/');
-  }
-
-  const notifySuccess = () => toast.success('O tema foi alterado!');
-
-  function changeTheme() {
-    notifySuccess();
   }
 
   function showDropdownContent() {
@@ -62,7 +69,12 @@ export function ProfileDropdown(props: ProfileDropdownType) {
           aria-label="Profile"
         >
           <div>
-            <ProfileImg />
+            { user ? (
+              <img src={user.avatar} alt={user.name} />
+            ) : (
+              <ProfileSvg />
+            )}
+
           </div>
         </button>
 
@@ -73,8 +85,10 @@ export function ProfileDropdown(props: ProfileDropdownType) {
 
           { adminCloseRoom && <button type="button" onClick={adminCloseRoom} className="outlined">Close room</button>}
 
-          { user && (
-          <button type="button" onClick={signOutAccount}>Logoff account</button>
+          { user ? (
+            <button type="button" className="logoff" onClick={handleSignOutAccount}>Sair</button>
+          ) : (
+            <button type="button" className="login" onClick={() => handleSignInGoogle(roomId)}>Entrar</button>
           )}
         </div>
 

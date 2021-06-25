@@ -2,6 +2,7 @@
 import { FormEvent, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+
 import { CustomHotToast } from '../components/CustomToast';
 import { RoomParamsType } from '../@types/room.d';
 
@@ -132,6 +133,7 @@ export function Room() {
                   type="button"
                   aria-label="Marcar como gostei"
                   onClick={() => handleLikeQuestion(question.id, question.likeId)}
+                  disabled={!user}
                 >
                   { question.likeCount > 0 && <span>{question.likeCount}</span>}
                   <LikeImg />
@@ -145,6 +147,7 @@ export function Room() {
         <footer>
           <div />
         </footer>
+
       </PageRoom>
 
       <CustomHotToast />

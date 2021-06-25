@@ -33,7 +33,13 @@ export const Dropdown = styled.div`
       height: 2rem;
       border-radius: 50%;
 
-      svg circle, svg path {
+      > img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+      }
+
+      > svg circle, svg path {
         fill: ${(props) => props.theme.colors.purple};
         stroke: ${(props) => props.theme.colors.purple};
       }
@@ -104,7 +110,27 @@ export const Dropdown = styled.div`
         background-color: ${(props) => props.theme.colors.secondary};
         color: ${(props) => props.theme.colors.white};
       }
+
     }
+
+    .login {
+      color: ${(props) => props.theme.colors.green};
+
+      &:hover {
+        background-color: ${(props) => props.theme.colors.green};
+        color: ${(props) => props.theme.colors.white};
+      }
+    }
+
+    .logoff {
+      color: ${(props) => props.theme.colors.red};
+
+      &:hover {
+        background-color: ${(props) => props.theme.colors.red};
+        color: ${(props) => props.theme.colors.white};
+      }
+    }
+
 
     .outlined {
       color: ${(props) => props.theme.colors.red};

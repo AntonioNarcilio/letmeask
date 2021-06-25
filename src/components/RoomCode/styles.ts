@@ -36,8 +36,8 @@ export const RoomCodeButton = styled.div`
     align-items: center;
     justify-content: center;
     flex: 1;
-    padding: 0 1rem 0 0.75rem;
-    width: 12.58rem;
+    padding: 0 1rem 0 0.7rem;
+    width: 13.5rem;
     font-size: 0.87rem;
     font-weight: 500;
   }

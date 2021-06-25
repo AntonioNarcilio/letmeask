@@ -15,9 +15,13 @@ export function Header(props: HeaderProps) {
       <div className="content">
         <img src={logoImg} title="Logo letmeask" alt="letmeask" />
         <div>
-          {roomId
-          && <RoomCode code={roomId} />}
-          {closeRoom ? <ProfileDropdown adminCloseRoom={closeRoom} /> : <ProfileDropdown />}
+          {roomId && <RoomCode code={roomId} />}
+
+          {closeRoom ? (
+            <ProfileDropdown adminCloseRoom={closeRoom} />
+          ) : (
+            <ProfileDropdown roomId={roomId} />
+          )}
 
         </div>
       </div>

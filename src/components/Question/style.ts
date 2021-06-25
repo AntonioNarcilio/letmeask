@@ -57,8 +57,12 @@ export const QuestionContent = styled.div`
           }
         }
 
-        &:hover {
+        &:not(:disabled):hover {
           filter: brightness(0.5);
+        }
+
+        &:disabled {
+          cursor: not-allowed;
         }
       }
     }

@@ -7,6 +7,7 @@ export default {
     text: '#29292e',
     textHighlight: '#E559F9',
     comment: '#A8A8B3',
+    highlighted: '#F4F0FF',
     white: '#fff',
     gray: '#A8A8B3',
     grayDark: '#8A8A93',

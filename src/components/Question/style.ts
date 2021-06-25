@@ -8,6 +8,23 @@ export const QuestionContent = styled.div`
 
   margin-top: 0.5rem;
 
+  &.highlighted {
+    background: ${(props) => props.theme.colors.highlighted};
+    border: 1px solid ${(props) => props.theme.colors.purple};
+  }
+
+  &.answered {
+    background: ${(props) => props.theme.colors.gray};
+    filter: grayscale(1) opacity(0.5);
+
+    footer button {
+      svg path {
+        stroke: ${(props) => props.theme.colors.red};
+        filter: grayscale(0) opacity(1);
+      }
+    }
+  }
+
   p {
     color: ${(props) => props.theme.colors.text};
   }
@@ -34,6 +51,11 @@ export const QuestionContent = styled.div`
         font-weight: 500;
         font-size: 0.87rem;
       }
+    }
+
+    > div {
+      display: flex;
+      gap: 1rem;
     }
 
     button {

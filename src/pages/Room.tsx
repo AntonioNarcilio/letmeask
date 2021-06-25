@@ -82,7 +82,7 @@ export function Room() {
         <main className="content">
           <div className="room-title">
             <h1>
-              Sala
+              Sala:
               {' '}
               {title}
             </h1>
@@ -127,7 +127,10 @@ export function Room() {
                 key={question.id}
                 content={question.content}
                 author={question.author}
+                isAnswered={question.isAnswered}
+                isHighlighted={question.isHighlighted}
               >
+                { !question.isAnswered && (
                 <button
                   className={`like-button ${question.likeId ? 'liked' : ''}`}
                   type="button"
@@ -138,6 +141,7 @@ export function Room() {
                   { question.likeCount > 0 && <span>{question.likeCount}</span>}
                   <LikeImg />
                 </button>
+                )}
               </Question>
             ))}
           </div>

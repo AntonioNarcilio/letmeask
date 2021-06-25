@@ -7,6 +7,8 @@ type QuestionType = {
     avatar: string;
   };
   children?: ReactNode;
+  isAnswered?: boolean;
+  isHighlighted?: boolean;
 }
 
 export { QuestionType };

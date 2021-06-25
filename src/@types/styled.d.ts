@@ -8,8 +8,9 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       text: string;
-      comment: string;
       textHighlight: string;
+      highlighted: string
+      comment: string;
       white: string;
       gray: string;
       grayDark: string;

@@ -29,6 +29,7 @@ declare module 'styled-components' {
       purpleDark: string;
       purpleShadow: string;
       cyan: string;
+      yellow: string;
     },
   }
 }

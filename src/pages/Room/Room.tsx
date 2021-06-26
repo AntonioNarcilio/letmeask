@@ -3,19 +3,19 @@ import { FormEvent, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-import { CustomHotToast } from '../components/CustomToast';
-import { RoomParamsType } from '../@types/room.d';
+import { CustomHotToast } from '../../components/CustomToast';
+import { RoomParamsType } from '../../@types/room.d';
 
-import { ReactComponent as LikeImg } from '../assets/images/like.svg';
-import emptyImg from '../assets/images/empty-questions.svg';
+import { ReactComponent as LikeImg } from '../../assets/images/like.svg';
+import emptyImg from '../../assets/images/empty-questions.svg';
 
-import { Button } from '../components/Button';
-import { Question } from '../components/Question';
-import { useAuth } from '../hooks/useAuth';
-import { useRoom } from '../hooks/useRoom';
-import { database } from '../services/firebase';
-import { PageRoom } from '../styles/pages/room';
-import { Header } from '../components/Header';
+import { Button } from '../../components/Button';
+import { Question } from '../../components/Question';
+import { useAuth } from '../../hooks/useAuth';
+import { useRoom } from '../../hooks/useRoom';
+import { database } from '../../services/firebase';
+import { PageRoom } from '../../styles/pages/room';
+import { Header } from '../../components/Header';
 
 export function Room() {
   const history = useHistory();

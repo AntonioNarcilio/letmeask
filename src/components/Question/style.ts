@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const QuestionContent = styled.div`
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.secondary};
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 1.5rem;
@@ -10,7 +10,7 @@ export const QuestionContent = styled.div`
 
   &.highlighted {
     background: ${(props) => props.theme.colors.highlighted};
-    border: 1px solid ${(props) => props.theme.colors.purple};
+    border: 2px solid ${(props) => props.theme.colors.purple};
   }
 
   &.answered {

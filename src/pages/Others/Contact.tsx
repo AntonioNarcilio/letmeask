@@ -1,5 +1,5 @@
-import { Header } from '../components/Header';
-import { Container } from '../styles/pages/contact';
+import { Header } from '../../components/Header';
+import { Container } from '../../styles/pages/contact';
 
 export function Contact() {
   return (

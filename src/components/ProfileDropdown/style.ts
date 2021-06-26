@@ -87,7 +87,7 @@ export const Dropdown = styled.div`
 
       &:hover {
         background-color: ${(props) => props.theme.colors.secondary};
-        color: ${(props) => props.theme.colors.white};
+        /* color: ${(props) => props.theme.colors.red}; */
       }
     }
 
@@ -105,6 +105,10 @@ export const Dropdown = styled.div`
 
       border: 0;
       background: none;
+
+      svg {
+        fill: ${(props) => props.theme.colors.yellow};
+      }
 
       &:hover {
         background-color: ${(props) => props.theme.colors.secondary};
@@ -124,11 +128,12 @@ export const Dropdown = styled.div`
         svg, svg path {
           width: 1.1rem;
           height: 1.1rem;
-          fill: ${(props) => props.theme.colors.purple};
-          stroke: ${(props) => props.theme.colors.purple};
+          fill: ${(props) => props.theme.colors.yellow};
+          stroke: ${(props) => props.theme.colors.yellow};
         }
 
         &:hover {
+          color: ${(props) => props.theme.colors.text};
           svg path {
             fill: ${(props) => props.theme.colors.white};
             stroke: ${(props) => props.theme.colors.white};
@@ -147,10 +152,11 @@ export const Dropdown = styled.div`
         svg, svg path {
           width: 1.1rem;
           height: 1.1rem;
-          fill: ${(props) => props.theme.colors.purple};
+          fill: ${(props) => props.theme.colors.primaryInverted};
         }
 
         &:hover {
+          color: ${(props) => props.theme.colors.text};
           svg path {
             fill: ${(props) => props.theme.colors.white};
           }

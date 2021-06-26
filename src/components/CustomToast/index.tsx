@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
+import { useContext } from 'react';
 import { Toaster, ToastBar } from 'react-hot-toast';
+import { ThemeContext } from 'styled-components';
 
 export function CustomHotToast() {
+  const { colors } = useContext(ThemeContext);
+
   return (
   // <Toaster>
   //   {(t) => (
@@ -18,6 +22,14 @@ export function CustomHotToast() {
     <Toaster
       containerStyle={{
         position: 'absolute',
+      }}
+      toastOptions={{
+        className: '',
+        style: {
+          padding: '16px',
+          background: colors.primary,
+          color: colors.text,
+        },
       }}
       gutter={10}
     />

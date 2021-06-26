@@ -35,6 +35,7 @@ export const PageRoom = styled.div`
         padding: 1rem;
         border-radius: 8px;
         background: ${(props) => props.theme.colors.textArea};
+        color: ${(props) => props.theme.colors.primaryInverted};
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         resize: vertical;
         min-height: 8.12rem;

@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Home } from './pages/Home';
-import { NewRoom } from './pages/NewRoom';
-import { Room } from './pages/Room';
-import { AdminRoom } from './pages/AdminRoom';
-import { Contact } from './pages/Contact';
-import { NotFound } from './pages/404';
+import { NewRoom } from './pages/Room/NewRoom';
+import { Room } from './pages/Room/Room';
+import { AdminRoom } from './pages/Room/AdminRoom';
+import { Contact } from './pages/Others/Contact';
+import { NotFound } from './pages/Error/404';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 import { GlobalStyle } from './styles/global';

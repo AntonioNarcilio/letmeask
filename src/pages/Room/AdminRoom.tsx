@@ -1,18 +1,18 @@
 /* eslint-disable no-unused-vars */
 import { useHistory, useParams } from 'react-router-dom';
 // import { CustomHotToast } from '../components/CustomToast';
-import { RoomParamsType } from '../@types/room.d';
+import { RoomParamsType } from '../../@types/room.d';
 
-import { ReactComponent as DeleteImg } from '../assets/images/delete.svg';
-import checkImg from '../assets/images/check.svg';
-import answerImg from '../assets/images/answer.svg';
-import emptyImg from '../assets/images/empty-questions.svg';
+import { ReactComponent as DeleteImg } from '../../assets/images/delete.svg';
+import checkImg from '../../assets/images/check.svg';
+import answerImg from '../../assets/images/answer.svg';
+import emptyImg from '../../assets/images/empty-questions.svg';
 
-import { Question } from '../components/Question';
-import { useRoom } from '../hooks/useRoom';
-import { database } from '../services/firebase';
-import { PageRoom } from '../styles/pages/room';
-import { Header } from '../components/Header';
+import { Question } from '../../components/Question';
+import { useRoom } from '../../hooks/useRoom';
+import { database } from '../../services/firebase';
+import { PageRoom } from '../../styles/pages/room';
+import { Header } from '../../components/Header';
 
 export function AdminRoom() {
   const history = useHistory();

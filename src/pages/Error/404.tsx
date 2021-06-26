@@ -2,9 +2,9 @@ import toast from 'react-hot-toast';
 import Lottie from 'react-lottie';
 import { useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
-import loadingAnimation from '../assets/animations/404-space-error.json';
-import { CustomHotToast } from '../components/CustomToast';
-import Container from '../styles/pages/notfound';
+import loadingAnimation from '../../assets/animations/404-space-error.json';
+import { CustomHotToast } from '../../components/CustomToast';
+import Container from '../../styles/pages/notfound';
 
 export function NotFound() {
   const history = useHistory();

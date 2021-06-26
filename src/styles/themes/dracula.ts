@@ -8,7 +8,7 @@ export default {
     text: '#f8f8f2',
     textHighlight: '#50fa7b',
     textArea: '#282a36',
-    highlighted: '#F4F0FF',
+    highlighted: '#383A59',
     comment: '#6272a4',
     white: '#f8f8f2',
     gray: '#7E85A7',
@@ -26,5 +26,6 @@ export default {
     purpleDark: '#b380f9',
     purpleShadow: '#6e5294',
     cyan: '#8be9fd',
+    yellow: '#f1fa8c',
   },
 };

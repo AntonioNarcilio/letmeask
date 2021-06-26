@@ -34,10 +34,12 @@ export const PageRoom = styled.div`
         border: 0;
         padding: 1rem;
         border-radius: 8px;
-        background: ${(props) => props.theme.colors.white};
+        background: ${(props) => props.theme.colors.textArea};
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         resize: vertical;
         min-height: 8.12rem;
+
+        outline-color: ${(props) => props.theme.colors.purple};
       }
 
       .form-footer {
@@ -83,6 +85,34 @@ export const PageRoom = styled.div`
 
     .question-list {
       margin-top: 1.5rem;
+    }
+
+    .empty-questions {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 1rem;
+
+      img {
+        padding: 1rem;
+      }
+
+      h1 {
+        color: ${(props) => props.theme.colors.text};
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.12rem;
+      }
+
+      p {
+        width: 40%;
+        color: ${(props) => props.theme.colors.comment};
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.87rem;
+        text-align: center;
+      }
     }
   }
 

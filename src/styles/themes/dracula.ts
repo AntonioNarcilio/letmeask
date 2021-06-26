@@ -3,11 +3,13 @@ export default {
 
   colors: {
     primary: '#1d1e26',
+    primaryInverted: '#F8F8F8',
     secondary: '#282a36',
     text: '#f8f8f2',
     textHighlight: '#50fa7b',
-    comment: '#6272a4',
+    textArea: '#282a36',
     highlighted: '#F4F0FF',
+    comment: '#6272a4',
     white: '#f8f8f2',
     gray: '#7E85A7',
     grayDark: '#6f7695',

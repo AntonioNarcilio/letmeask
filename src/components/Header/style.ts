@@ -13,7 +13,7 @@ export const MyHeader = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    > img {
+    > svg {
       max-height: 2.81rem;
     }
 

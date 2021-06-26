@@ -6,7 +6,7 @@ export const RoomCodeButton = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.primary};
   border: 1px solid ${(props) => props.theme.colors.purple};
   cursor: pointer;
 
@@ -23,7 +23,6 @@ export const RoomCodeButton = styled.div`
   }
 
   &:hover {
-    background: ${(props) => props.theme.colors.white};
     border: 1px solid ${(props) => props.theme.colors.pink};
 
     div {
@@ -37,7 +36,8 @@ export const RoomCodeButton = styled.div`
     justify-content: center;
     flex: 1;
     padding: 0 1rem 0 0.7rem;
-    width: 13.5rem;
+    /* width: 13.5rem; */
+    width: auto;
     font-size: 0.87rem;
     font-weight: 500;
   }

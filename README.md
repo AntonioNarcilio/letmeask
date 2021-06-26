@@ -1,7 +1,7 @@
 # LETMEASK
 
-
 ## 📂 Project structure
+
 ```
 .
 ├── public
@@ -18,9 +18,23 @@
 │   │       ├── google-icon.svg
 │   │       ├── illustration.svg
 │   │       ├── like.svg
-│   │       └── logo.svg
+│   │       ├── logo.svg
+│   │       ├── moon.svg
+│   │       ├── profile.svg
+│   │       └── sun.svg
 │   ├── components
 │   │   ├── Button
+│   │   │   ├── index.tsx
+│   │   │   └── style.ts
+│   │   ├── CustomToast
+│   │   │   └── index.tsx
+│   │   ├── Header
+│   │   │   ├── index.tsx
+│   │   │   └── style.ts
+│   │   ├── ProfileDropdown
+│   │   │   ├── index.tsx
+│   │   │   └── style.ts
+│   │   ├── Question
 │   │   │   ├── index.tsx
 │   │   │   └── style.ts
 │   │   └── RoomCode
@@ -29,22 +43,32 @@
 │   ├── contexts
 │   │   └── AuthContext.tsx
 │   ├── hooks
-│   │   └── useAuth.ts
+│   │   ├── useAuth.ts
+│   │   └── useRoom.ts
 │   ├── pages
+│   │   ├── AdminRoom.tsx
+│   │   ├── Contact.tsx
 │   │   ├── Home.tsx
 │   │   ├── NewRoom.tsx
 │   │   └── Room.tsx
 │   ├── services
 │   │   └── firebase.ts
 │   ├── styles
+│   │   ├── pages
+│   │   │   ├── auth.ts
+│   │   │   ├── contact.ts
+│   │   │   └── room.ts
 │   │   ├── themes
 │   │   │   ├── dracula.ts
 │   │   │   └── nlw.ts
-│   │   ├── auth.ts
-│   │   ├── global.ts
-│   │   └── room.ts
+│   │   └── global.ts
 │   ├── @types
 │   │   ├── auth-context.d.ts
+│   │   ├── button.d.ts
+│   │   ├── firebase-questions.d.ts
+│   │   ├── header.d.ts
+│   │   ├── profile-dropdown.d.ts
+│   │   ├── question.d.ts
 │   │   ├── room-code.d.ts
 │   │   ├── room.d.ts
 │   │   └── styled.d.ts

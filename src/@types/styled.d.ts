@@ -6,9 +6,11 @@ declare module 'styled-components' {
 
     colors: {
       primary: string;
+      primaryInverted: string;
       secondary: string;
       text: string;
       textHighlight: string;
+      textArea: string;
       highlighted: string
       comment: string;
       white: string;

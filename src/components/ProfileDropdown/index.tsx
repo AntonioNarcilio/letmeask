@@ -1,23 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-unused-vars */
-import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
-import { CustomHotToast } from '../CustomToast';
+import { useContext } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
 import { ReactComponent as ProfileSvg } from '../../assets/images/profile.svg';
+import { ReactComponent as MoonSvg } from '../../assets/images/moon.svg';
+import { ReactComponent as SunSvg } from '../../assets/images/sun.svg';
+
 import { Dropdown } from './style';
 import { ProfileDropdownType } from '../../@types/profile-dropdown.d';
+import { ThemeSwitchContext } from '../../contexts/ThemeSwitchContext';
 
 export function ProfileDropdown(props: ProfileDropdownType) {
   const history = useHistory();
   const { user, signOut, signInWithGoogle } = useAuth();
+  const { theme, switchTheme } = useContext(ThemeSwitchContext);
 
   const { adminCloseRoom, roomId } = props;
-
-  function changeTheme() {
-    toast.success('O tema foi alterado!');
-  }
 
   async function handleSignInGoogle(pageId: string|undefined) {
     // user is not authenticate?
@@ -79,23 +78,61 @@ export function ProfileDropdown(props: ProfileDropdownType) {
         </button>
 
         <div id="my-dropdown" className="dropdown-content">
-          <button type="button" onClick={changeTheme}>Theme</button>
+          {theme.title === 'dracula' ? (
+            <button
+              type="button"
+              className="theme-light"
+              // @ts-ignore
+              onClick={() => switchTheme('nlw')}
+            >
+              <span>Modo dia</span>
+              <SunSvg />
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="theme-dark"
+              // @ts-ignore
+              onClick={() => switchTheme('dracula')}
+            >
+              <span>Modo noite</span>
+              <MoonSvg />
+            </button>
+          )}
 
           <a href="/info">Info</a>
 
-          { adminCloseRoom && <button type="button" onClick={adminCloseRoom} className="outlined">Close room</button>}
+          {adminCloseRoom && (
+          <button
+            type="button"
+            onClick={adminCloseRoom}
+            className="outlined"
+          >
+            Close room
+          </button>
+          )}
 
           { user ? (
-            <button type="button" className="logoff" onClick={handleSignOutAccount}>Sair</button>
+            <button
+              type="button"
+              className="logoff"
+              onClick={handleSignOutAccount}
+            >
+              Sair
+
+            </button>
           ) : (
-            <button type="button" className="login" onClick={() => handleSignInGoogle(roomId)}>Entrar</button>
+            <button
+              type="button"
+              className="login"
+              onClick={() => handleSignInGoogle(roomId)}
+            >
+              Entrar
+            </button>
           )}
         </div>
 
       </Dropdown>
-
-      <CustomHotToast />
-
     </>
   );
 }

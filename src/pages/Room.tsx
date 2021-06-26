@@ -7,6 +7,7 @@ import { CustomHotToast } from '../components/CustomToast';
 import { RoomParamsType } from '../@types/room.d';
 
 import { ReactComponent as LikeImg } from '../assets/images/like.svg';
+import emptyImg from '../assets/images/empty-questions.svg';
 
 import { Button } from '../components/Button';
 import { Question } from '../components/Question';
@@ -121,30 +122,38 @@ export function Room() {
             </div>
           </form>
 
-          <div className="question-list">
-            {questions.map((question) => (
-              <Question
-                key={question.id}
-                content={question.content}
-                author={question.author}
-                isAnswered={question.isAnswered}
-                isHighlighted={question.isHighlighted}
-              >
-                { !question.isAnswered && (
-                <button
-                  className={`like-button ${question.likeId ? 'liked' : ''}`}
-                  type="button"
-                  aria-label="Marcar como gostei"
-                  onClick={() => handleLikeQuestion(question.id, question.likeId)}
-                  disabled={!user}
+          {questions.length > 0 ? (
+            <div className="question-list">
+              {questions.map((question) => (
+                <Question
+                  key={question.id}
+                  content={question.content}
+                  author={question.author}
+                  isAnswered={question.isAnswered}
+                  isHighlighted={question.isHighlighted}
                 >
-                  { question.likeCount > 0 && <span>{question.likeCount}</span>}
-                  <LikeImg />
-                </button>
-                )}
-              </Question>
-            ))}
-          </div>
+                  { !question.isAnswered && (
+                    <button
+                      className={`like-button ${question.likeId ? 'liked' : ''}`}
+                      type="button"
+                      aria-label="Marcar como gostei"
+                      onClick={() => handleLikeQuestion(question.id, question.likeId)}
+                      disabled={!user}
+                    >
+                      { question.likeCount > 0 && <span>{question.likeCount}</span>}
+                      <LikeImg />
+                    </button>
+                  )}
+                </Question>
+              ))}
+            </div>
+          ) : (
+            <div className="empty-questions">
+              <img src={emptyImg} alt="Nenhuma mensagem existente" />
+              <h1>Nenhuma pergunta por aqui...</h1>
+              <p>Faça o seu login e seja a primeira pessoa a fazer uma pergunta!</p>
+            </div>
+          )}
 
         </main>
 

@@ -1,4 +1,3 @@
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Home } from './pages/Home';
@@ -6,17 +5,16 @@ import { NewRoom } from './pages/NewRoom';
 import { Room } from './pages/Room';
 import { AdminRoom } from './pages/AdminRoom';
 import { Contact } from './pages/Contact';
+import { NotFound } from './pages/404';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 import { GlobalStyle } from './styles/global';
 
-// import dracula from './styles/themes/dracula';
-import nlw from './styles/themes/nlw';
+import { ThemeSwitchContextProvider } from './contexts/ThemeSwitchContext';
 
 function App() {
   return (
-    <ThemeProvider theme={nlw}>
-
+    <ThemeSwitchContextProvider>
       <BrowserRouter>
         <AuthContextProvider>
           <GlobalStyle />
@@ -28,11 +26,12 @@ function App() {
             <Route path="/admin/rooms/:id" component={AdminRoom} />
             <Route path="/info" component={Contact} />
 
+            <Route component={NotFound} />
+
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>
-
-    </ThemeProvider>
+    </ThemeSwitchContextProvider>
   );
 }
 

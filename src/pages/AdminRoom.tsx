@@ -6,6 +6,7 @@ import { RoomParamsType } from '../@types/room.d';
 import { ReactComponent as DeleteImg } from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
+import emptyImg from '../assets/images/empty-questions.svg';
 
 import { Question } from '../components/Question';
 import { useRoom } from '../hooks/useRoom';
@@ -70,16 +71,17 @@ export function AdminRoom() {
 
           </div>
 
-          <div className="question-list">
-            {questions.map((question) => (
-              <Question
-                key={question.id}
-                content={question.content}
-                author={question.author}
-                isAnswered={question.isAnswered}
-                isHighlighted={question.isHighlighted}
-              >
-                {!question.isAnswered && (
+          {questions.length > 0 ? (
+            <div className="question-list">
+              {questions.map((question) => (
+                <Question
+                  key={question.id}
+                  content={question.content}
+                  author={question.author}
+                  isAnswered={question.isAnswered}
+                  isHighlighted={question.isHighlighted}
+                >
+                  {!question.isAnswered && (
                   <>
                     <button
                       type="button"
@@ -103,19 +105,26 @@ export function AdminRoom() {
                       />
                     </button>
                   </>
-                )}
+                  )}
 
-                <button
-                  type="button"
-                  onClick={() => handleDeleteQuestion(question.id)}
-                >
-                  <DeleteImg
-                    title="Remover pergunta"
-                  />
-                </button>
-              </Question>
-            ))}
-          </div>
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteQuestion(question.id)}
+                  >
+                    <DeleteImg
+                      title="Remover pergunta"
+                    />
+                  </button>
+                </Question>
+              ))}
+            </div>
+          ) : (
+            <div className="empty-questions">
+              <img src={emptyImg} alt="Nenhuma mensagem existente" />
+              <h1>Nenhuma pergunta por aqui...</h1>
+              <p>Envie o código desta sala para seus amigos e comece a responder perguntas!</p>
+            </div>
+          )}
 
         </main>
 
@@ -124,7 +133,6 @@ export function AdminRoom() {
         </footer>
       </PageRoom>
 
-      {/* <CustomHotToast  /> */}
     </>
   );
 }

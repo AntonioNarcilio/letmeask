@@ -1,5 +1,7 @@
 # LETMEASK
 
+<img src="./.github/animation.gif" />
+
 # EM DESENVOLVIMENTO (MAIS EM BREVE) ...
 
 ## 📂 Project structure

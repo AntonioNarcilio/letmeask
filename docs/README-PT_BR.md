@@ -1,12 +1,12 @@
 
 <p align="center">
-  <img width="75%" src="../.github/letmeask-no-bkg.svg">
-
-  <p align="center">Tire as dúvidas de sua audiências em tempo-real!</p>
-
-  <img src="../.github/animation.gif">
+  <img width="50%" src="../.github/letmeask-no-bkg.svg">
 </p>
+<p align="center">Tire as dúvidas de sua audiências em tempo-real!</p>
+<a herf="https://an-letmeask.vercel.app"><img src="../.github/animation.gif"></a>
+<h6 align="center"><b>Clique na imagem ☝️ para visitar o site</b></h6>
 
+<br/>
 <p align="center">
   <a href="#dependencies"><img src="https://shields.io/badge/-🚧%20dependencies-ff5500"/></a>
   <a href="#install"><img src="https://shields.io/badge/-🚀%20install-5cff43"/></a>
@@ -24,15 +24,18 @@
   </a>
 
   <img alt="GitHub last commit" title="GitHub last commit" src="https://img.shields.io/github/last-commit/AntonioNarcilio/letmeask?&color=50fa7b&labelColor=282a36" />
+  <br/>
+  <a href="https://www.linkedin.com/in/antonionarcilio/"  target="_blank">
+  <img alt="linkedin" align="center" title="linkedin" src="https://img.shields.io/badge/Antonio%20Narcilio-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/antonionarcilio/" />
+  </a>
   <br><br>
-  <a href="./docs/README-PT_BR.md">Português Brasileiro 🇧🇷</a>
 </p>
 
 
 ---
 
 <br>
-<h2 id="description"><b>📝 Description</b></h2>
+<h2 id="description"><b>📝 Descrição</b></h2>
 <p align="justify">
 
 </p>
@@ -40,7 +43,7 @@
 ---
 
 <br>
-<h2 id="dependencies"><b>🚧 Dependencies</b></h2>
+<h2 id="dependencies"><b>🚧 Dependências</b></h2>
 <p align="justify">
 
 </p>
@@ -48,7 +51,7 @@
 ---
 
 <br>
-<h2 id="structure"><b>🗃️ Project structure</b></h2>
+<h2 id="structure"><b>🗃️ Estrutura do projeto</b></h2>
 O projeto atualmente se encontra na seguinte estrutura
 <details>
 <summary>
@@ -158,46 +161,46 @@ O projeto atualmente se encontra na seguinte estrutura
 ---
 
 <br>
-<h2 id="recommendations"><b>👍 Recommendations</b></h2>
+<h2 id="recommendations"><b>👍 Recomendações</b></h2>
 
 ---
 
 <br>
-<h2 id="features"><b>🛸 Features</b></h2>
+<h2 id="features"><b>🛸 Funcionalidades</b></h2>
 
 ---
 
 <br>
-<h2 id="technology"><b>🛰️ Technology</b></h2>
+<h2 id="technology"><b>🛰️ Tecnologias</b></h2>
 
 ---
 
 <br>
-<h2 id="screenshot"><b>🖥️ Screenshot</b></h2>
+<h2 id="screenshot"><b>🖥️ Captura de telas</b></h2>
 
 ---
 
 <br>
-<h2 id="prototyping"><b>🏎 Prototyping</b></h2>
+<h2 id="prototyping"><b>🏎 Prototipagem</b></h2>
 
 ---
 
 <br>
-<h2 id="install"><b>🚀 Install</b></h2>
+<h2 id="install"><b>🚀 Rodando localmente</b></h2>
 
 ---
 
 <br>
-<h2 id="license"><b>📜 License</b></h2>
+<h2 id="license"><b>📜 Licença</b></h2>
 
-This project is under license [MIT](./LICENSE)
+Este projeto está sob a licença [MIT](./LICENSE)
 
 ---
 
 <br><br>
 
 <p align="center">
-created by <a href="https://linkedin.com/in/antonionarcilio">@antonionarcilio</a>
+criado por <a href="https://linkedin.com/in/antonionarcilio">@antonionarcilio</a>
 </p>
 
 

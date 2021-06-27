@@ -1,12 +1,12 @@
 
 <p align="center">
-  <img width="100%" src="./.github/letmeask-no-bkg.svg">
-
-  <p align="center">Respond to your audience in real time through live Q&A rooms</p>
-
-  <img src="./.github/animation.gif">
+  <img width="60%" src="./.github/letmeask-no-bkg.svg">
 </p>
+<p align="center">Respond to your audience in real time through live Q&A rooms</p>
+<a herf="https://an-letmeask.vercel.app"><img src="./.github/animation.gif"></a>
+<h6 align="center"><b>Click on the image to visit the site</b></h6>
 
+<br>
 <p align="center">
   <a href="#dependencies"><img src="https://shields.io/badge/-🚧%20dependencies-ff5500"/></a>
   <a href="#install"><img src="https://shields.io/badge/-🚀%20install-5cff43"/></a>
@@ -24,6 +24,11 @@
   </a>
 
   <img alt="GitHub last commit" title="GitHub last commit" src="https://img.shields.io/github/last-commit/AntonioNarcilio/letmeask?&color=50fa7b&labelColor=282a36" />
+  <br>
+
+  <a href="https://www.linkedin.com/in/antonionarcilio/"  target="_blank">
+  <img alt="linkedin" align="center" title="linkedin" src="https://img.shields.io/badge/Antonio%20Narcilio-blue?style=flat&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/antonionarcilio/" />
+  </a>
   <br><br>
   <a href="./docs/README-PT_BR.md">Português Brasileiro 🇧🇷</a>
 </p>
@@ -50,6 +55,7 @@
 <br>
 <h2 id="structure"><b>🗃️ Project structure</b></h2>
 The project is currently in the following structure.
+<br/><br/>
 <details>
 <summary>
 👈 Click to expand
@@ -188,7 +194,6 @@ The project is currently in the following structure.
 ---
 
 <br>
----
 <h2 id="license"><b>📜 License</b></h2>
 
 This project is under license [MIT](./LICENSE)

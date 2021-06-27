@@ -36,7 +36,7 @@
 <br>
 <h2 id="description"><b>📝 Description</b></h2>
 <p align="justify">
-
+Project developed during the NLW week (Next Level Week) #06 of Rocketseat. Application that aims to answer the doubts of your audience in real time through question and answer rooms (Q&A).
 </p>
 
 <br>
@@ -150,13 +150,27 @@ The project is currently in the following structure.
 
 <br>
 <h2 id="features"><b>🛸 Features</b></h2>
+<p align="justify">
+What features does the `letmeask` app currently have? 🤔
+</p>
+
+- [x] Option to login through google account.
+- [x] Option to choose between light 🌕 / dark 🌑 theme.
+- [x] Room creation option.
+- [x] Option to access via code/id of the Q&A room **(user does not need to be logged in)**.
+- [x] Option to “share” the code / id of the question and answer room.
+- [x] Option to add questions **(only for normal user and need to be logged in)**.
+- [x] Option to leave a like on a question **(only for normal user and need to be logged in)**.
+- [x] Option to highlight question(s) **(only the room administrator has this option.)**.
+- [x] Option to mark questions as answered **(only the room administrator has this option.)**.
+- [x] Option to remove a question **(only the room administrator has this option.)**.
+- [x] Option to close the room **(only the room administrator has this option.)**.
 
 
 <br>
 <h2 id="technology"><b>🛰️ Tecnologias</b></h2>
 <p align="justify">
 This project was developed using the following technologies 👇.</p>
-<br/>
 <a href="https://reactjs.org">
 <img alt="reactjs" title="reactjs" src="https://img.shields.io/static/v1?label=React&message=Library%20javascript&style=social&logo=React&logoColor=0088CC" />
 </a>
@@ -240,7 +254,7 @@ Below are some screenshots that demonstrate certain features of the `letmeask` w
 <br>
 <h2 id="prototyping"><b>🏎 Prototipagem</b></h2>
 <p align="justify">
-This project was developed "based" on the prototype defined below, found in figma.</p><br>
+This project was developed "based" on the prototype defined below, found in figma.</p>
 <a href="https://www.figma.com/file/0OpBWgGPkoUxdc5AzPcifs/NLW-06-Letmeask?node-id=0%3A1"><img src="./.github/letmeask-prototype.png" /></a>
 <h6 align="center"><b>click on the image ☝️ to see the prototype in figma.</b></h6>
 

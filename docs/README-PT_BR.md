@@ -28,10 +28,12 @@
  <br><br>
 </p>
 
+---
+
 <br>
 <h2 id="description"><b>📝 Descrição</b></h2>
 <p align="justify">
-Projeto desenvolvido durante a semana NLW (Next Level Week) #06 da Rocketseat, Aplicação que tem o intuito de tirar as dúvidas de suas audiências em tempo-real por meio de salas de perguntas e respostas (Q&A).
+Projeto desenvolvido durante a semana NLW (Next Level Week) #06 da Rocketseat. Aplicação que tem o intuito de tirar as dúvidas de suas audiências em tempo-real por meio de salas de perguntas e respostas (Q&A).
 </p>
 
 <br>
@@ -157,17 +159,16 @@ Quais as funcionalidades que a aplicação `letmeask` possui 🤔 atualmente?
 - [x] Opção de adentrar em uma sala existem por meio do código da sala **(usuário não precisa estar logado)**;
 - [x] Opção de copiar o código da sala;
 - [x] Opção de adicionar perguntas **(apenas para usuário comum e precisa estar logado)**;
-- [x] Deixar um gostei em uma pergunta **(apenas usuário comum e precisa estar logado)**;
+- [x] Opção de deixar um gostei em uma pergunta **(apenas usuário comum e precisa estar logado)**;
 - [x] Opção de destacar pergunta(s) **(apenas o administrador da sala tem esta opção)**;
 - [x] Opção de marcação de pergunta(s) como respondida **(apenas o administrador da sala tem esta opção)**;
 - [x] Opção de remoção de pergunta(s) **(apenas o administrador da sala tem esta opção)**;
-- [x] Opção de fechar a sala **(apenas o administrador tem esta opção)**;
+- [x] Opção de fechar a sala **(apenas o administrador da sala tem esta opção)**;
 
 <br>
 <h2 id="technology"><b>🛰️ Tecnologias</b></h2>
 <p align="justify">
 Este projeto foi desenvolvido utilizando as seguintes tecnologias 👇.</p>
-<br/>
 <a href="https://reactjs.org">
 <img alt="reactjs" title="reactjs" src="https://img.shields.io/static/v1?label=React&message=Biblioteca%20javascript&style=social&logo=React&logoColor=0088CC" />
 </a>
@@ -250,7 +251,7 @@ Mais abaixo encontra-se algumas capturas de telas demostrando certas funcionalid
 <br>
 <h2 id="prototyping"><b>🏎 Prototipagem</b></h2>
 <p align="justify">
-Este projeto foi desenvolvido se "baseando" no protótipo definido abaixo, encontrado no figma.</p><br>
+Este projeto foi desenvolvido se "baseando" no protótipo definido abaixo, encontrado no figma.</p>
 <a href="https://www.figma.com/file/0OpBWgGPkoUxdc5AzPcifs/NLW-06-Letmeask?node-id=0%3A1"><img src="../.github/letmeask-prototype.png" /></a>
 <h6 align="center"><b>clique na imagem ☝️ para visualizar o protótipo no figma.</b></h6>
 

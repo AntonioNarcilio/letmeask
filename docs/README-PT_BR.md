@@ -3,7 +3,7 @@
   <img width="50%" src="../.github/letmeask-no-bkg.svg">
 </p>
 <p align="center">Tire as dúvidas de sua audiências em tempo-real!</p>
-<a herf="https://an-letmeask.vercel.app"><img src="../.github/animation.gif"></a>
+<a href="https://an-letmeask.vercel.app"><img src="../.github/animation.gif"></a>
 <h6 align="center"><b>Clique na imagem ☝️ para visitar o site</b></h6>
 
 <br/>

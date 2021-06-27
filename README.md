@@ -3,7 +3,7 @@
   <img width="60%" src="./.github/letmeask-no-bkg.svg">
 </p>
 <p align="center">Respond to your audience in real time through live Q&A rooms</p>
-<a herf="https://an-letmeask.vercel.app"><img src="./.github/animation.gif"></a>
+<a href="https://an-letmeask.vercel.app"><img src="./.github/animation.gif"></a>
 <h6 align="center"><b>Click on the image to visit the site</b></h6>
 
 <br>

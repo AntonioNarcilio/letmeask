@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -100,7 +100,13 @@ export function ProfileDropdown(props: ProfileDropdownType) {
             </button>
           )}
 
-          <a href="/info">Info</a>
+          <button type="button">
+            <Link to="/info">Info</Link>
+          </button>
+          <button type="button">
+
+            <Link to="/">Home</Link>
+          </button>
 
           {adminCloseRoom && (
           <button

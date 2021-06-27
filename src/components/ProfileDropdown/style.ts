@@ -73,24 +73,6 @@ export const Dropdown = styled.div`
     left: 0%;
     transform: translate(-37%, calc(100vh/15));
 
-    a {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color: ${(props) => props.theme.colors.text};
-      padding: 0.75rem 1rem;
-
-      text-decoration: none;
-      text-align: center;
-
-      &:hover {
-        background-color: ${(props) => props.theme.colors.secondary};
-        /* color: ${(props) => props.theme.colors.red}; */
-      }
-    }
-
     button {
       width: 100%;
       display: flex;
@@ -106,62 +88,67 @@ export const Dropdown = styled.div`
       border: 0;
       background: none;
 
-      svg {
-        fill: ${(props) => props.theme.colors.yellow};
+      a {
+        text-decoration: none;
+        color: ${(props) => props.theme.colors.text};
       }
 
       &:hover {
         background-color: ${(props) => props.theme.colors.secondary};
         color: ${(props) => props.theme.colors.white};
+
+        a {
+          color: ${(props) => props.theme.colors.white};
+        }
+      }
+
+    }
+
+    .theme-light {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 0.5rem;
+
+      svg, svg path {
+        width: 1.1rem;
+        height: 1.1rem;
+        fill: ${(props) => props.theme.colors.yellow};
+        stroke: ${(props) => props.theme.colors.yellow};
+      }
+
+      &:hover {
+        color: ${(props) => props.theme.colors.white};
+        svg path {
+          fill: ${(props) => props.theme.colors.white};
+          stroke: ${(props) => props.theme.colors.white};
+        }
       }
     }
 
+    .theme-dark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-      .theme-light {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+      gap: 0.5rem;
 
-        gap: 0.5rem;
-
-        svg, svg path {
-          width: 1.1rem;
-          height: 1.1rem;
-          fill: ${(props) => props.theme.colors.yellow};
-          stroke: ${(props) => props.theme.colors.yellow};
-        }
-
-        &:hover {
-          color: ${(props) => props.theme.colors.text};
-          svg path {
-            fill: ${(props) => props.theme.colors.white};
-            stroke: ${(props) => props.theme.colors.white};
-          }
-        }
+      svg, svg path {
+        width: 1.1rem;
+        height: 1.1rem;
+        fill: ${(props) => props.theme.colors.primaryInverted};
       }
 
-      .theme-dark {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        gap: 0.5rem;
-
-        svg, svg path {
-          width: 1.1rem;
-          height: 1.1rem;
-          fill: ${(props) => props.theme.colors.primaryInverted};
-        }
-
-        &:hover {
-          color: ${(props) => props.theme.colors.text};
-          svg path {
-            fill: ${(props) => props.theme.colors.white};
-          }
+      &:hover {
+        color: ${(props) => props.theme.colors.white};
+        svg path {
+          fill: ${(props) => props.theme.colors.white};
         }
       }
+    }
 
     .login {
       color: ${(props) => props.theme.colors.green};

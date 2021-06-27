@@ -1,5 +1,7 @@
 # LETMEASK
 
+# EM DESENVOLVIMENTO (MAIS EM BREVE) ...
+
 ## 📂 Project structure
 
 ```

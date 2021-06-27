@@ -2,6 +2,7 @@
 import { FormEvent, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
 
 import { CustomHotToast } from '../../components/CustomToast';
 import { RoomParamsType } from '../../@types/room.d';
@@ -125,26 +126,36 @@ export function Room() {
           {questions.length > 0 ? (
             <div className="question-list">
               {questions.map((question) => (
-                <Question
-                  key={question.id}
-                  content={question.content}
-                  author={question.author}
-                  isAnswered={question.isAnswered}
-                  isHighlighted={question.isHighlighted}
+                <motion.div
+                  transition={{ delay: 0, duration: 0.5 }}
+                  variants={{
+                    show: { opacity: 1, x: '0' },
+                    hidden: { opacity: 0, x: '-100%' },
+                  }}
+                  initial="hidden"
+                  animate="show"
                 >
-                  { !question.isAnswered && (
-                    <button
-                      className={`like-button ${question.likeId ? 'liked' : ''}`}
-                      type="button"
-                      aria-label="Marcar como gostei"
-                      onClick={() => handleLikeQuestion(question.id, question.likeId)}
-                      disabled={!user}
-                    >
-                      { question.likeCount > 0 && <span>{question.likeCount}</span>}
-                      <LikeImg />
-                    </button>
-                  )}
-                </Question>
+                  <Question
+                    key={question.id}
+                    content={question.content}
+                    author={question.author}
+                    isAnswered={question.isAnswered}
+                    isHighlighted={question.isHighlighted}
+                  >
+                    { !question.isAnswered && (
+                      <button
+                        className={`like-button ${question.likeId ? 'liked' : ''}`}
+                        type="button"
+                        aria-label="Marcar como gostei"
+                        onClick={() => handleLikeQuestion(question.id, question.likeId)}
+                        disabled={!user}
+                      >
+                        { question.likeCount > 0 && <span>{question.likeCount}</span>}
+                        <LikeImg />
+                      </button>
+                    )}
+                  </Question>
+                </motion.div>
               ))}
             </div>
           ) : (

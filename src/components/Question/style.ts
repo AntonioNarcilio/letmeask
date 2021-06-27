@@ -1,29 +1,12 @@
 import styled from 'styled-components';
 
 export const QuestionContent = styled.div`
-  background: ${(props) => props.theme.colors.secondary};
+  background: ${(props) => props.theme.colors.questionBackground};
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 1.5rem;
 
   margin-top: 0.5rem;
-
-  &.highlighted {
-    background: ${(props) => props.theme.colors.highlighted};
-    border: 2px solid ${(props) => props.theme.colors.purple};
-  }
-
-  &.answered {
-    background: ${(props) => props.theme.colors.gray};
-    filter: grayscale(1) opacity(0.5);
-
-    footer button {
-      svg path {
-        stroke: ${(props) => props.theme.colors.red};
-        filter: grayscale(0) opacity(1);
-      }
-    }
-  }
 
   p {
     color: ${(props) => props.theme.colors.text};
@@ -63,6 +46,31 @@ export const QuestionContent = styled.div`
       background: transparent;
       cursor: pointer;
 
+      svg path {
+        transition: all 0.3s;
+      }
+      &:nth-child(1) {
+        &:hover {
+          svg path, circle {
+            stroke: ${(props) => props.theme.colors.green};
+          }
+        }
+      }
+      &:nth-child(2) {
+        &:hover {
+          svg path {
+            stroke: ${(props) => props.theme.colors.yellow};
+          }
+        }
+      }
+      &:nth-child(3) {
+        &:hover {
+          svg path {
+            stroke: ${(props) => props.theme.colors.red};
+          }
+        }
+      }
+
       &.like-button {
         display: flex;
         align-items: flex-end;
@@ -85,6 +93,35 @@ export const QuestionContent = styled.div`
 
         &:disabled {
           cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  &.highlighted {
+    background: ${(props) => props.theme.colors.highlighted};
+    border: 2px solid ${(props) => props.theme.colors.purple};
+
+    footer button {
+      svg path, circle {
+        stroke: ${(props) => props.theme.colors.purple};
+      }
+    }
+  }
+
+  &.answered {
+    background: ${(props) => props.theme.colors.gray};
+    p, footer img, footer span {
+      filter: grayscale(1) opacity(0.4);
+    }
+
+    footer button {
+      svg path {
+        stroke: ${(props) => props.theme.colors.highlighted};
+      }
+      &:hover {
+        svg path {
+          stroke: ${(props) => props.theme.colors.red};
         }
       }
     }

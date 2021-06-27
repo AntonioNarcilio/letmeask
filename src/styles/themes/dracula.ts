@@ -5,6 +5,7 @@ export default {
     primary: '#1d1e26',
     primaryInverted: '#F8F8F8',
     secondary: '#282a36',
+    questionBackground: '#282a36',
     text: '#f8f8f2',
     textHighlight: '#50fa7b',
     textArea: '#282a36',

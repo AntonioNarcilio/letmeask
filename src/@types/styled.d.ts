@@ -8,6 +8,7 @@ declare module 'styled-components' {
       primary: string;
       primaryInverted: string;
       secondary: string;
+      questionBackground: string | '';
       text: string;
       textHighlight: string;
       textArea: string;

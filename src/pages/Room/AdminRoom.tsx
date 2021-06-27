@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useHistory, useParams } from 'react-router-dom';
-// import { CustomHotToast } from '../components/CustomToast';
+import { motion } from 'framer-motion';
+import { useContext } from 'react';
 import { RoomParamsType } from '../../@types/room.d';
 
 import { ReactComponent as DeleteImg } from '../../assets/images/delete.svg';
-import checkImg from '../../assets/images/check.svg';
-import answerImg from '../../assets/images/answer.svg';
+import { ReactComponent as CheckImg } from '../../assets/images/check.svg';
+import { ReactComponent as AnswerImg } from '../../assets/images/answer.svg';
 import emptyImg from '../../assets/images/empty-questions.svg';
 
 import { Question } from '../../components/Question';
@@ -13,6 +14,7 @@ import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 import { PageRoom } from '../../styles/pages/room';
 import { Header } from '../../components/Header';
+import { ModalYesNoContext } from '../../contexts/ModalYesNoContext';
 
 export function AdminRoom() {
   const history = useHistory();
@@ -20,13 +22,7 @@ export function AdminRoom() {
 
   const roomId = params.id;
   const { title, questions } = useRoom(roomId);
-
-  async function handleDeleteQuestion(questionId: string) {
-    // eslint-disable-next-line no-alert
-    if (window.confirm('Tem certeza que  você deseja excluir esta pergunta?')) {
-      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
-    }
-  }
+  const { handleDeleteQuestion, handleEndRoom } = useContext(ModalYesNoContext);
 
   async function handleCheckQuestionAsAnswered(questionId: string) {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
@@ -40,19 +36,11 @@ export function AdminRoom() {
     });
   }
 
-  async function handleEndRoom() {
-    await database.ref(`rooms/${roomId}`).update({
-      endedAt: new Date(),
-    });
-
-    history.replace('/');
-  }
-
   return (
     <>
       <PageRoom>
 
-        <Header roomId={roomId} closeRoom={handleEndRoom} />
+        <Header roomId={roomId} closeRoom={() => handleEndRoom(roomId)} />
 
         <main className="content">
           <div className="room-title">
@@ -74,48 +62,63 @@ export function AdminRoom() {
           {questions.length > 0 ? (
             <div className="question-list">
               {questions.map((question) => (
-                <Question
+                <motion.div
                   key={question.id}
-                  content={question.content}
-                  author={question.author}
-                  isAnswered={question.isAnswered}
-                  isHighlighted={question.isHighlighted}
+                  transition={{ delay: 0, duration: 0.5 }}
+                  variants={{
+                    show: { opacity: 1, x: '0' },
+                    hidden: { opacity: 0, x: '-100%' },
+                  }}
+                  initial="hidden"
+                  animate="show"
                 >
-                  {!question.isAnswered && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={() => handleCheckQuestionAsAnswered(question.id)}
-                    >
-                      <img
-                        src={checkImg}
-                        title="Marcar pergunta com respondida"
-                        alt="Marcar pergunta com respondida"
-                      />
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleHighlightQuestion(question.id)}
-                    >
-                      <img
-                        src={answerImg}
-                        title="Dar destaque à pergunta"
-                        alt="Dar destaque à pergunta"
-                      />
-                    </button>
-                  </>
-                  )}
-
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteQuestion(question.id)}
+                  <Question
+                    key={question.id}
+                    content={question.content}
+                    author={question.author}
+                    isAnswered={question.isAnswered}
+                    isHighlighted={question.isHighlighted}
                   >
-                    <DeleteImg
-                      title="Remover pergunta"
-                    />
-                  </button>
-                </Question>
+                    {!question.isAnswered && !question.isHighlighted && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => handleCheckQuestionAsAnswered(question.id)}
+                      >
+                        <CheckImg title="Marcar pergunta com respondida" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => handleHighlightQuestion(question.id)}
+                      >
+                        <AnswerImg title="Dar destaque à pergunta" />
+                      </button>
+                    </>
+                    )}
+
+                    {!question.isAnswered && question.isHighlighted && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => handleCheckQuestionAsAnswered(question.id)}
+                      >
+                        <CheckImg title="Marcar pergunta com respondida" />
+                      </button>
+                    </>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteQuestion(question.id, roomId)}
+                      className="button-delete"
+                    >
+                      <DeleteImg
+                        title="Remover pergunta"
+                      />
+                    </button>
+                  </Question>
+                </motion.div>
               ))}
             </div>
           ) : (

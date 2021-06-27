@@ -11,24 +11,27 @@ import { AuthContextProvider } from './contexts/AuthContext';
 import { GlobalStyle } from './styles/global';
 
 import { ThemeSwitchContextProvider } from './contexts/ThemeSwitchContext';
+import { ModalYesNoProvider } from './contexts/ModalYesNoContext';
 
 function App() {
   return (
     <ThemeSwitchContextProvider>
       <BrowserRouter>
         <AuthContextProvider>
-          <GlobalStyle />
-          <Switch>
+          <ModalYesNoProvider>
+            <GlobalStyle />
+            <Switch>
 
-            <Route path="/" exact component={Home} />
-            <Route path="/rooms/new" component={NewRoom} />
-            <Route path="/rooms/:id" component={Room} />
-            <Route path="/admin/rooms/:id" component={AdminRoom} />
-            <Route path="/info" component={Contact} />
+              <Route path="/" exact component={Home} />
+              <Route path="/rooms/new" component={NewRoom} />
+              <Route path="/rooms/:id" component={Room} />
+              <Route path="/admin/rooms/:id" component={AdminRoom} />
+              <Route path="/info" component={Contact} />
 
-            <Route component={NotFound} />
+              <Route component={NotFound} />
 
-          </Switch>
+            </Switch>
+          </ModalYesNoProvider>
         </AuthContextProvider>
       </BrowserRouter>
     </ThemeSwitchContextProvider>

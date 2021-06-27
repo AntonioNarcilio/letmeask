@@ -4,7 +4,8 @@ export default {
   colors: {
     primary: '#F8F8F8',
     primaryInverted: '#1d1e26',
-    secondary: '#fff',
+    secondary: '#835AFD',
+    questionBackground: '#FEFEFE',
     text: '#29292e',
     textHighlight: '#E559F9',
     textArea: '#fff',
@@ -26,6 +27,6 @@ export default {
     purpleDark: '#6b4acf',
     purpleShadow: '#553ba5',
     cyan: '#8be9fd',
-    yellow: '##F7FA5A',
+    yellow: '#F7FA5A',
   },
 };

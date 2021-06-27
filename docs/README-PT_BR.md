@@ -1,17 +1,17 @@
 
 <p align="center">
-  <img width="100%" src="./.github/letmeask-no-bkg.svg">
+  <img width="75%" src="../.github/letmeask-no-bkg.svg">
 
-  <p align="center">Respond to your audience in real time through live Q&A rooms</p>
+  <p align="center">Tire as dúvidas de sua audiências em tempo-real!</p>
 
-  <img src="./.github/animation.gif">
+  <img src="../.github/animation.gif">
 </p>
 
 <p align="center">
   <a href="#dependencies"><img src="https://shields.io/badge/-🚧%20dependencies-ff5500"/></a>
   <a href="#install"><img src="https://shields.io/badge/-🚀%20install-5cff43"/></a>
   <a href="#recommendations"><img src="https://shields.io/badge/-👍%20recomendations-aaffff"/></a>
-  <a href="#technology"><img src="https://shields.io/badge/-🛰️%20technology-4800d7"/></a>
+  <a href="#technology"><img src="https://shields.io/badge/-🛰️%20Technology-4800d7"/></a>
   <a href="#features"><img src="https://shields.io/badge/-🛸%20features-ffff7f"/></a>
   <a href="#structure"><img src="https://shields.io/badge/🗃️%20project%20structure-ffff7f"/></a>
   <a href="#screenshot"><img src="https://shields.io/badge/-🖥️%20screenshot-ffffff"/></a>
@@ -49,10 +49,10 @@
 
 <br>
 <h2 id="structure"><b>🗃️ Project structure</b></h2>
-The project is currently in the following structure.
+O projeto atualmente se encontra na seguinte estrutura
 <details>
 <summary>
-👈 Click to expand
+👈 CLique para expandir
 </summary>
 
 ```
@@ -188,7 +188,6 @@ The project is currently in the following structure.
 ---
 
 <br>
----
 <h2 id="license"><b>📜 License</b></h2>
 
 This project is under license [MIT](./LICENSE)

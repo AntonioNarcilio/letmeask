@@ -4,7 +4,7 @@
 </p>
 <p align="center">Tire as dúvidas de suas audiências em tempo-real!</p>
 <a href="https://an-letmeask.vercel.app"><img src="../.github/animation.gif"></a>
-<h6 align="center"><b>Clique na imagem ☝️ para visitar o site</b></h6>
+<h6 align="center"><b>clique na imagem ☝️ para visitar o site.</b></h6>
 
 <br/>
 <p align="center">
@@ -28,16 +28,11 @@
  <br><br>
 </p>
 
-
----
-
 <br>
 <h2 id="description"><b>📝 Descrição</b></h2>
 <p align="justify">
 Projeto desenvolvido durante a semana NLW (Next Level Week) #06 da Rocketseat, Aplicação que tem o intuito de tirar as dúvidas de suas audiências em tempo-real por meio de salas de perguntas e respostas (Q&A).
 </p>
-
----
 
 <br>
 <h2 id="structure"><b>🗃️ Estrutura do projeto</b></h2>
@@ -150,8 +145,6 @@ O projeto atualmente se encontra na seguinte estrutura definida abaixo 👇.
 
 </details>
 
----
-
 <br>
 <h2 id="features"><b>🛸 Funcionalidades</b></h2>
 <p align="justify">
@@ -169,8 +162,6 @@ Quais as funcionalidades que a aplicação `letmeask` possui 🤔 atualmente?
 - [x] Opção de marcação de pergunta(s) como respondida **(apenas o administrador da sala tem esta opção)**;
 - [x] Opção de remoção de pergunta(s) **(apenas o administrador da sala tem esta opção)**;
 - [x] Opção de fechar a sala **(apenas o administrador tem esta opção)**;
-
----
 
 <br>
 <h2 id="technology"><b>🛰️ Tecnologias</b></h2>
@@ -223,10 +214,11 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias 👇.</p>
 <img alt="Lottie Files" title="Lottie Files" src="https://img.shields.io/static/v1?label=Lottie%20Files&message=Animações&style=social&logo=&logoColor=F24E1E" />
 </a>
 
----
-
 <br>
 <h2 id="screenshot"><b>🖥️ Captura de telas</b></h2>
+<p align="justify">
+Mais abaixo encontra-se algumas capturas de telas demostrando certas funcionalidades da aplicação.
+</p>
 
 <table>
   <tr align="center">
@@ -238,7 +230,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias 👇.</p>
     <td><img src="../.github/enter-in-the-room.gif"></td>
   </tr>
   <tr align="center">
-    <td><h5>Temas dark / light</h5></td>
+    <td><h5>Temas escuro (dracula) / claro (nlw)</h5></td>
     <td><h5>Sala do administrador</h5></td>
   </tr>
   <tr>
@@ -255,17 +247,12 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias 👇.</p>
   </tr>
 </table>
 
----
-
 <br>
 <h2 id="prototyping"><b>🏎 Prototipagem</b></h2>
 <p align="justify">
 Este projeto foi desenvolvido se "baseando" no protótipo definido abaixo, encontrado no figma.</p><br>
 <a href="https://www.figma.com/file/0OpBWgGPkoUxdc5AzPcifs/NLW-06-Letmeask?node-id=0%3A1"><img src="../.github/letmeask-prototype.png" /></a>
-<h6 align="center"><b>Clique na imagem ☝️ para visualizar o protótipo no figma</b></h6>
-
-
----
+<h6 align="center"><b>clique na imagem ☝️ para visualizar o protótipo no figma.</b></h6>
 
 
 <br>
@@ -273,17 +260,8 @@ Este projeto foi desenvolvido se "baseando" no protótipo definido abaixo, encon
 
 Este projeto está sob a licença [MIT](./LICENSE)
 
----
-
 <br><br>
 
 <p align="center">
 criado por <a href="https://linkedin.com/in/antonionarcilio">@antonionarcilio</a>
 </p>
-
-
-
-
-
-
-

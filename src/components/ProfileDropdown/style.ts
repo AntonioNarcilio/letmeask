@@ -155,7 +155,7 @@ export const Dropdown = styled.div`
 
       &:hover {
         background-color: ${(props) => props.theme.colors.green};
-        color: ${(props) => props.theme.colors.white};
+        color: ${(props) => props.theme.colors.text};
       }
     }
 
@@ -183,5 +183,4 @@ export const Dropdown = styled.div`
   .show {
     display: block;
   }
-
 `;

@@ -42,7 +42,7 @@ Projeto desenvolvido durante a semana NLW (Next Level Week) #06 da Rocketseat, A
 <br>
 <h2 id="structure"><b>🗃️ Estrutura do projeto</b></h2>
 <p align="justify">
-O projeto atualmente se encontra na seguinte estrutura
+O projeto atualmente se encontra na seguinte estrutura definida abaixo 👇.
 </p>
 <br/>
 <details>
@@ -154,18 +154,21 @@ O projeto atualmente se encontra na seguinte estrutura
 
 <br>
 <h2 id="features"><b>🛸 Funcionalidades</b></h2>
+<p align="justify">
+Quais as funcionalidades que a aplicação `letmeask` possui 🤔 atualmente?
+</p>
 
 - [x] Opção de login por meio da conta do google;
 - [x] Opção de escolha entre temas dia 🌕 / noite 🌑;
 - [x] Opção de criação de sala;
 - [x] Opção de adentrar em uma sala existem por meio do código da sala **(usuário não precisa estar logado)**;
 - [x] Opção de copiar o código da sala;
-- [x] Opção de adicionar perguntas (apenas para usuário comum e precisa estar logado);
-- [x] Deixar um gostei em uma pergunta (apenas usuário comum e precisa estar logado);
-- [x] Opção de destacar pergunta(s) (apenas o administrador da sala tem esta opção);
-- [x] Opção de marcação de pergunta(s) como respondida (apenas o administrador da sala tem esta opção);
-- [x] Opção de remoção de pergunta(s) (apenas o administrador da sala tem esta opção);
-- [x] Opção de fechar a sala (apenas o administrador tem esta opção);
+- [x] Opção de adicionar perguntas **(apenas para usuário comum e precisa estar logado)**;
+- [x] Deixar um gostei em uma pergunta **(apenas usuário comum e precisa estar logado)**;
+- [x] Opção de destacar pergunta(s) **(apenas o administrador da sala tem esta opção)**;
+- [x] Opção de marcação de pergunta(s) como respondida **(apenas o administrador da sala tem esta opção)**;
+- [x] Opção de remoção de pergunta(s) **(apenas o administrador da sala tem esta opção)**;
+- [x] Opção de fechar a sala **(apenas o administrador tem esta opção)**;
 
 ---
 
@@ -224,6 +227,33 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias 👇.</p>
 
 <br>
 <h2 id="screenshot"><b>🖥️ Captura de telas</b></h2>
+
+<table>
+  <tr align="center">
+    <td><h5>Autenticação e criação de sala</h5></td>
+    <td><h5>Entrando em uma sala</h5></td>
+  </tr>
+  <tr>
+    <td><img src="../.github/auth-and-new_room.gif"></td>
+    <td><img src="../.github/enter-in-the-room.gif"></td>
+  </tr>
+  <tr align="center">
+    <td><h5>Temas dark / light</h5></td>
+    <td><h5>Sala do administrador</h5></td>
+  </tr>
+  <tr>
+    <td><img src="../.github/themes.gif"></td>
+    <td><img src="../.github/admin-room.gif"></td>
+  </tr>
+  <tr align="center">
+    <td><h5>Mandando uma pergunta</h5></td>
+    <td><h5>Autenticação dentro da sala</h5></td>
+  </tr>
+  <tr>
+    <td><img src="../.github/questions.gif"></td>
+    <td><img src="../.github/login-in-the-room.gif"></td>
+  </tr>
+</table>
 
 ---
 
